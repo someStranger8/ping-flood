@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import os, sys, art, time
+import os, sys, time
 from tdqm import trange
 from colorama import Fore
 
@@ -12,6 +12,7 @@ def in_sudo_mode():
 def load():
     # loading screen
     os.system("pip3 install art")
+    import art
         
 def main():
     # ui
