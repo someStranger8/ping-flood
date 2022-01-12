@@ -11,7 +11,7 @@ def in_sudo_mode():
 
 def load():
     # loading screen
-    time.sleep(0.5)
+    os.system("pip3 install art")
         
 def main():
     # ui
