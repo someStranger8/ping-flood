@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-import os, sys, time, art
-from tdqm import trange
+import os, sys, time, art, random
+from tqdm import trange
 from colorama import Fore
 
 def in_sudo_mode():
