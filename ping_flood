@@ -20,7 +20,7 @@ def main():
     banner = art.text2art("ping flood", font="small")
     print(f"{rand}{banner}")
     
-    for i in trange(load):
+    for i in trange(20):
         load()
     
     # variables
@@ -33,4 +33,6 @@ def main():
     else:
         os.system(f"ping -s {ps} -f {ip}")
         
-main()
+
+if __name__ == "__main__":
+    main()
